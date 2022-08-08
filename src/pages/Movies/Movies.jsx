@@ -1,5 +1,5 @@
 import { getMovies } from "api";
-import { Box } from "components/box/box";
+import { Box } from "components/Box/box";
 import { SearchBox } from "components/SearchBox/SearchBox";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -9,12 +9,14 @@ import PropTypes from "prop-types";
 const Movies = () => {
 	const [movies, setMovies] = useState([]);
 	const [searchParams, setSearchParams] = useSearchParams();
-	const query = searchParams.get("query");
+	const query = searchParams.get("query")?.trim();
 	const location = useLocation();
 
 	useEffect(() => {
+		if (!query) return;
+
 		getMovies(query).then(movie => setMovies(movie));
-	}, [query]);
+	}, [query, searchParams]);
 
 	const handleSubmit = event => {
 		event.preventDefault();

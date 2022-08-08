@@ -1,5 +1,5 @@
 import { getMovieDetails, IMG_URL } from "api";
-import { Box } from "components/box/box";
+import { Box } from "components/Box/box";
 import { useEffect, useState } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import { AdditionalLink, BackBtn } from "./MovieDetails.styled.js";

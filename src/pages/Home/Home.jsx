@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { getTrendMovies } from "api";
 import { useState } from "react";
 import { MovieLink } from "./Home.styled.js";
-import { Box } from "components/box/box.js";
+import { Box } from "components/Box/box.js";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
