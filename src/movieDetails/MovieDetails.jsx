@@ -20,7 +20,7 @@ const MovieDetails = () => {
 
 	return (
 		<Box>
-			<BackBtn to={location.state?.from ?? "/movies"}> Go back</BackBtn>
+			<BackBtn to={location.pathname ? location.state?.from ?? "/movies" : "/"}> Go back</BackBtn>
 			<div>
 				<img src={IMG_URL + poster_path} alt="poster" />
 				<h2>

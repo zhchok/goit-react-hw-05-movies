@@ -3,9 +3,11 @@ import { getTrendMovies } from "api";
 import { useState } from "react";
 import { MovieLink } from "./Home.styled.js";
 import { Box } from "components/box/box.js";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
 	const [movies, setMovies] = useState([]);
+	const location = useLocation();
 
 	useEffect(() => {
 		getTrendMovies().then(setMovies);
@@ -16,7 +18,9 @@ const Home = () => {
 			<ul>
 				{movies.map(({ title, id }) => (
 					<li key={id}>
-						<MovieLink to={`movies/${id}`}>{title}</MovieLink>
+						<MovieLink to={`movies/${id}`} state={{ from: location }}>
+							{title}
+						</MovieLink>
 					</li>
 				))}
 			</ul>
