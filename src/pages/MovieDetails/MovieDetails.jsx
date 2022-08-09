@@ -16,11 +16,12 @@ const MovieDetails = () => {
 		getMovieDetails(movieId).then(data => {
 			setDetails(data);
 		});
-	}, [movieId]);
+		console.log(location.state?.from);
+	}, [location.state?.from, movieId]);
 
 	return (
 		<Box>
-			<BackBtn to={location.pathname ? location.state?.from ?? "/movies" : "/"}> Go back</BackBtn>
+			<BackBtn to={location.state?.from ?? "/"}> Go back</BackBtn>
 			<div>
 				<img src={IMG_URL + poster_path} alt="poster" />
 				<h2>
@@ -34,8 +35,12 @@ const MovieDetails = () => {
 			</div>
 			<div>
 				<h2>Additional Information</h2>
-				<AdditionalLink to="cast">Cast</AdditionalLink>
-				<AdditionalLink to="reviews">Reviews</AdditionalLink>
+				<AdditionalLink to="cast" state={{ from: location.state?.from ?? "/" }}>
+					Cast
+				</AdditionalLink>
+				<AdditionalLink to="reviews" state={{ from: location.state?.from ?? "/" }}>
+					Reviews
+				</AdditionalLink>
 			</div>
 			<Outlet />
 		</Box>
