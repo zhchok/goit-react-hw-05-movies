@@ -1,5 +1,5 @@
 import { getMovieCredits, IMG_URL } from "api";
-import { Box } from "components/Box/box";
+import { Box } from "components/box1/box";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";

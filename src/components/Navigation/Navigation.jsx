@@ -1,4 +1,4 @@
-import { Box } from "components/Box/box";
+import { Box } from "components/box1/box";
 
 import { NavItem } from "./Navigation.styled";
 
