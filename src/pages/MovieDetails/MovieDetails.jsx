@@ -1,5 +1,5 @@
 import { getMovieDetails, IMG_URL } from "api";
-import { Box } from "components/Box/box";
+import { Box } from "components/box1/box";
 import { useEffect, useState } from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import { AdditionalLink, BackBtn } from "./MovieDetails.styled.js";
@@ -35,10 +35,10 @@ const MovieDetails = () => {
 			</div>
 			<div>
 				<h2>Additional Information</h2>
-				<AdditionalLink to="cast" state={{ from: location.state?.from ?? "/" }}>
+				<AdditionalLink to="cast" state={{ from: location.state?.from }}>
 					Cast
 				</AdditionalLink>
-				<AdditionalLink to="reviews" state={{ from: location.state?.from ?? "/" }}>
+				<AdditionalLink to="reviews" state={{ from: location.state?.from }}>
 					Reviews
 				</AdditionalLink>
 			</div>
