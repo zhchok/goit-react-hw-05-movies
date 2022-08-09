@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { GlobalStyle } from "./Base/GlobalStyle";
+import { GlobalStyle } from "./Base1/GlobalStyle";
 import { Box } from "./Box/box";
 import { lazy, Suspense } from "react";
 import { Navigation } from "./Navigation/Navigation";
